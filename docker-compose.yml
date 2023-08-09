@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+  pacta_dash:
+    container_name: pacta_dash_prototype
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    user: 'root'
+    ports:
+      - '3838:3838'
+    volumes:
+      - 'shiny_logs:/var/log/shiny-server'
+
+volumes:
+  shiny_logs:
