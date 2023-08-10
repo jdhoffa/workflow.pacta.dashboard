@@ -28,8 +28,6 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
 
 EXPOSE 3838
 
-COPY bin/entrypoint.sh /usr/bin/entrypoint.sh
-RUN chmod +x /usr/bin/entrypoint.sh
 COPY bin/shiny-server.sh /usr/bin/shiny-server.sh
 COPY ./app/* /srv/shiny-server/
 
@@ -38,6 +36,9 @@ RUN Rscript -e "\
   workflow_pkgs <- renv::dependencies('/srv/shiny-server')[['Package']]; \
   pak::pkg_install(workflow_pkgs); \
   "  
+
+COPY bin/entrypoint.sh /usr/bin/entrypoint.sh
+RUN chmod +x /usr/bin/entrypoint.sh
 
 # run app
 CMD ["/usr/bin/entrypoint.sh"]
