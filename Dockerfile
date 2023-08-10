@@ -41,4 +41,4 @@ COPY bin/entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
 # run app
-CMD ["/usr/bin/entrypoint.sh"]
+CMD ["/usr/bin/entrypoint.sh", "1234"]
