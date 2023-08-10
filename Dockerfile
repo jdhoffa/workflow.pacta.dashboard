@@ -1,4 +1,4 @@
-FROM --platform=arm64 transitionmonitordockerregistry.azurecr.io/rmi_pacta:2021q4_1.0.0
+FROM --platform=arm64 ghcr.io/rmi-pacta/workflow.transition.monitor:main
 
 RUN apt-get update && apt-get install -y \
   sudo \
