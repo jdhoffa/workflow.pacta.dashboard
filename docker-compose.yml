@@ -11,6 +11,8 @@ services:
     ports:
       - '3838:3838'
     volumes:
+      - /Users/jdhoffa/github/pacta-data:/pacta-data
+      - /Users/jdhoffa/github/workflow.transition.monitor/working_dir:/bound/working_dir
       - 'shiny_logs:/var/log/shiny-server'
 
 volumes:
