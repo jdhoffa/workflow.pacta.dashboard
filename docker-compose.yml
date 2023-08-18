@@ -13,6 +13,8 @@ services:
     volumes:
       - /Users/jdhoffa/github/pacta-data:/pacta-data
       - /Users/jdhoffa/github/workflow.transition.monitor/working_dir:/bound/working_dir
+      - /Users/jdhoffa/github/templates.transition.monitor/:/templates.transition.monitor
+      - /Users/jdhoffa/github/user_results/:/user_results
       - 'shiny_logs:/var/log/shiny-server'
 
 volumes:
